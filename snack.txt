@@ -1,0 +1,6 @@
+PATA1	rustica san carlo	0.4
+PATA2	chipsters	0.35
+KIND1	ovetto kinder	0.75
+KIND2	barretta kinder	0.5
+KIND3	happy hippo	0.25
+MARS1	barretta mars	0.8

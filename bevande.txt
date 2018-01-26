@@ -1,0 +1,3 @@
+EXP	10	caffe espresso	0.35
+LON	20	caffe lungo	0.45
+AME	40	caffe americano	0.60
