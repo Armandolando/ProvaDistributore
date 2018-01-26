@@ -6,18 +6,15 @@ public class DistibutoreSnack extends Distributore {
 
     private int nCassetti;
     private int nMax = 6;
-    private HashMap<String,Prodotto> prodotti;
+    private HashMap<String,Prodotto> prodotti = new HashMap<String, Prodotto>();
     private  double monete;
 
-    public DistibutoreSnack(int nCassetti, double monete) {
+    public DistibutoreSnack( double monete) {
         this.nCassetti = nMax;
         this.monete = monete;
     }
 
-    public DistibutoreSnack(int nCassetti) {
 
-        this.nCassetti = nMax;
-    }
 
     @Override
     public void aggiungiProdotto(String cod, Prodotto p) {
@@ -31,7 +28,7 @@ public class DistibutoreSnack extends Distributore {
 
     @Override
     public void prelevaProdotto(String cod, int n50, int n20, int n10, int n5) {
-        double a = 0.50*n50+0.20*n20+0.10*n10+0.5*n5;
+        double a = 0.50*n50+0.20*n20+0.10*n10+0.05*n5;
         if(prodotti.get(cod).getPrezzo()==a){
 
             if(((Snack)prodotti.get(cod)).prelevaSnack()) {

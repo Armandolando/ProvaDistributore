@@ -5,7 +5,7 @@ import java.util.HashMap;
 public class DistributoreBevande extends Distributore {
 
 
-    private HashMap<String,Prodotto> prodotti;
+    private HashMap<String,Prodotto> prodotti = new HashMap<String, Prodotto>();
     private int quantitaProdotto;
     private  double monete;
 
@@ -27,8 +27,10 @@ public class DistributoreBevande extends Distributore {
     @Override
     public void prelevaProdotto(String cod, int n50, int n20, int n10, int n5) {
 
-        double a = 0.50*n50+0.20*n20+0.10*n10+0.5*n5;
-        if(prodotti.get(cod).getPrezzo()==a){
+        double a = 0.50*n50+0.20*n20+0.10*n10+0.05*n5;
+        double tmp =  Math.floor(a*100)/100;
+
+        if(prodotti.get(cod).getPrezzo()==tmp){
             quantitaProdotto -= 10;
             monete+=a;
             System.out.println("Prodotto in erogazione");
@@ -44,7 +46,7 @@ public class DistributoreBevande extends Distributore {
         System.out.println("Prodotti disponibili");
         for(String key : prodotti.keySet()){
 
-                System.out.println((Bevanda)prodotti.get(key));
+                System.out.println((Bevanda)prodotti.get(key)+" "+quantitaProdotto);
             }
         }
         else {

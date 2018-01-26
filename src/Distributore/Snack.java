@@ -24,6 +24,6 @@ public class Snack extends Prodotto {
 
     @Override
     public String toString() {
-        return (getCodice()+" "+getNome()+" "+getPrezzo());
+        return (getCodice()+" "+getNome()+" "+getPrezzo()+" "+getQuantita());
     }
 }
